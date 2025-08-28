@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario com JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
+</head>
+
+<body>
+
+    <main class="main">
+        <div class="informacoes">
+            <h1 class="titulo">FICOU COM DÚVIDA? NOS MANDE UMA MENSAGEM!</h1>
+            <p class="texto">caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos em contato
+                em menos de 24h.</p>
+        </div>
+
+        <form action="GET" class="formulario" id="formulario">
+              
+            <input class="name" type="text" name="nome" id="nome" placeholder="Nome completo*"> <br><br>
+
+            <input class="email" type="text" name="email" id="email" placeholder="E-mail*"> <br><br>
+
+            <input class="telefone" type="text" name="telefone" id="telefone" placeholder="Telefone*"> <br><br>
+
+            <input class="mensagem" type="text" name="mensagem" id="mensagem" placeholder="Mensagem*"> <br><br>
+            
+            <p class="texto">*campos obrigatórios</p>
+
+            <button class="btn-enviar" id="btn-enviar">
+                <p class="texto">Enviar</p>
+            </button>
+        </form>
+    </main>
+    <script type="text/javascript" src="/src/js/index.js"></script>
+</body>
+
+</html>
