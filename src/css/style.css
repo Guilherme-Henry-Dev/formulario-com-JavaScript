@@ -60,6 +60,7 @@
     padding: 10px;
     height: 300px;
     border-radius: 5px;
+    resize: none;
 }
 
 .formulario .texto{
