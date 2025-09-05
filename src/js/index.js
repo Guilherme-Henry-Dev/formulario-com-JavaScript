@@ -1,38 +1,24 @@
-document.getElementById("formulario").addEventListener("submit", function(event) {
-  event.preventDefault();
+document.getElementById("formulario").addEventListener("submit", e => {
+  e.preventDefault();
 
-  let campos = ["nome", "email", "telefone", "mensagem"];
-  let formularioValido = true;
+  const campos = ["nome", "email", "telefone", "mensagem"];
+  let valido = true;
 
-  campos.forEach(function(campoId) {
-    let campo = document.getElementById(campoId);
+  document.querySelectorAll(".erro").forEach(el => el.remove());
 
-    let msgErro = campo.nextElementSibling;
-    if (msgErro && msgErro.classList.contains("erro")) {
-      msgErro.remove();
-    }
+  for (let id of campos) {
+    const campo = document.getElementById(id);
+    campo.classList.remove("valido", "invalido");
 
-    if (campo.value.trim() === "") {
-      formularioValido = false;
-      campo.style.border = "2px solid red";
+    if (!campo.value.trim()) {
+      valido = false;
+      campo.classList.add("invalido");
 
-      let span = document.createElement("span");
-      span.classList.add("erro");
-      span.style.color = "red";
-      span.style.fontSize = "14px";
-      span.style.display = "block";
-      span.style.marginTop = "1px"; 
-      span.innerText = "Campo obrigatório";
-
-      campo.insertAdjacentElement("afterend", span);
+      campo.insertAdjacentHTML("afterend", `<span class="erro">Campo obrigatório</span>`);
     } else {
-      campo.style.border = "2px solid green";
+      campo.classList.add("valido");
     }
-  });
-
-  if (formularioValido) {
-    setTimeout(() => {
-      alert("Formulário válido! ✅");
-    }, 100);
   }
+
+  if (valido) setTimeout(() => alert("Formulário válido! ✅"), 100);
 });
